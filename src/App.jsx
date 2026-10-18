@@ -1,12 +1,12 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom"
-import MainLayout from "./component/MainLayout/MainLayout"
-import HomePage from "./pages/Homepage/HomePage"
-import MenuPage from "./pages/MenuPage/MenuPage"
-import ReservationsPage from "./pages/ReservationsPage/ReservationsPage"
-import EventPage from "./pages/EventPage/EventPage"
-import OurStoryPage from "./pages/OurStoryPage/OurStoryPage"
-import VisitPage from "./pages/VisitPage/VisitPage"
-import ErrorPage from "./pages/ErrorPage/ErrorPage"
+import MainLayout from "./component/MainLayout/MainLayout.jsx"
+import HomePage from "./pages/Homepage/HomePage.jsx"
+import MenuPage from "./pages/MenuPage/MenuPage.jsx"
+import ReservationsPage from "./pages/ReservationsPage/ReservationsPage.jsx"
+import EventPage from "./pages/EventPage/EventPage.jsx"
+import OurStoryPage from "./pages/OurStoryPage/OurStoryPage.jsx"
+import VisitPage from "./pages/VisitPage/VisitPage.jsx"
+import ErrorPage from "./pages/ErrorPage/ErrorPage.jsx"
 
 
 
