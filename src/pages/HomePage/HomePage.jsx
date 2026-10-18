@@ -6,7 +6,7 @@ import React from 'react'
 const HomePage = () => {
   return (
     <div>
-      
+      <h1>Hellow</h1>
     </div>
   )
 }

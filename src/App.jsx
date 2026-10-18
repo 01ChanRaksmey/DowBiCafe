@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom"
 import MainLayout from "./component/MainLayout/MainLayout.jsx"
-import HomePage from "./pages/Homepage/HomePage.jsx"
+import HomePage from "./pages/HomePage/HomePage.jsx"
 import MenuPage from "./pages/MenuPage/MenuPage.jsx"
 import ReservationsPage from "./pages/ReservationsPage/ReservationsPage.jsx"
 import EventPage from "./pages/EventPage/EventPage.jsx"
