@@ -50,9 +50,9 @@ const Header = () => {
           <NavLink className="text-[12px] px-2.5 py-2 font-Courgette text-main bg-green-500 rounded-xl flex items-center gap-2 hover:scale-95"><IoCartOutline className="text-[18px]" />Cart</NavLink>
           <NavLink className="hidden sm:inline-block text-[12px] px-2.5 py-2 font-Courgette text-main border-gray-400 border rounded-xl hover:scale-95">Sign In</NavLink>
           <button onClick={() => setTheme(theme === "light" ? "dark" : "light")} className="text-xl px-2.5 py-2 font-bold border border-gray-400 rounded-xl">
-            {theme === "light" ? <CiLight /> :  <CiDark className="text-white" /> }
+            {theme === "light" ? <CiLight className="text-main" /> :  <CiDark className="text-logo" /> }
           </button>
-          <button onClick={() => setIsMenu(isMenu === false ? true : false)} className="border border-gray-400  px-2.5 py-2 rounded-xl lg:hidden hover:scale-105">
+          <button onClick={() => setIsMenu(!isMenu)} className="border border-gray-400  px-2.5 py-2 rounded-xl lg:hidden hover:scale-105">
             <IoMenuOutline className="text-xl text-logo" />
           </button>
         </div>

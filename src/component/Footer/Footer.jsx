@@ -6,8 +6,8 @@ import React from 'react'
 
 const Footer = () => {
 
-  const footNavStyle = "font-happy hover:underline text-logo py-1";
-  const aLinkStyle ="hover:underline flex items-center font-happy text-logo gap-2 py-1 ";
+  const footNavStyle = "self-start font-happy hover:underline text-logo py-1  w-fit";
+  const aLinkStyle ="w-fit hover:underline flex items-center font-happy text-logo gap-2 py-1 ";
   return (
     <div className="flex px-10 flex-col bg-footbg pt-10 ">
 
@@ -48,7 +48,7 @@ const Footer = () => {
               <FaTelegram />Telegram
             </a>
             <a href="mailto:hello@dowb icafe.example" className={aLinkStyle}>
-              hello@dowb icafe.example
+              hello@dowbicafe.example
             </a>
           </nav>
         </div>
