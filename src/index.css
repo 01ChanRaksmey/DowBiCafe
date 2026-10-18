@@ -1,0 +1,34 @@
+@import "tailwindcss";
+
+
+
+@theme {
+  --color-logo: #3B2A20;
+  --color-border: #E7D8C8;
+  --color-primary: #FFF8F0;
+  --color-primary-hover: #F1E5D6;
+  --color-main: #3B2A20; 
+  --color-underline: #3B2A20;
+  --color-muted: #75675C;
+  --color-footbg: #F1E5D6;
+  --font-sans: "Space Grotesk", system-ui, sans-serif;
+  --font-logo: "Sofadi One";
+  --font-display: "Playfair Display";
+  --font-happy: "Merienda";
+  --font-Courgette: "Courgette";
+  --font-Akaya-Kanadaka: "Akaya Kanadaka";
+  --font-Caveat: "Caveat";
+  --font-Kavoon: "Kavoon";
+}
+
+[data-theme="dark"]{
+  --color-border: #303832;
+  --color-logo: #F5F1EA;
+  --color-primary: #0f1613;
+  --color-primary-hover: #26342D;
+  --color-main: #e4e1d7;
+  --color-underline: #D6A85F;
+  --color-muted:#B8B0A5;
+  --color-footbg: #1F2928;
+
+}
