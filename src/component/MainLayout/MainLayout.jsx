@@ -10,7 +10,7 @@ const MainLayout = () => {
         <header className="sticky top-0 backdrop-blur-xl ">
             <Header/>
         </header>
-        <main className="h-dvh">
+        <main className="min-h-dvh mb-5">
             <Outlet />
         </main>
         <footer>
