@@ -7,7 +7,7 @@ import Footer from "../Footer/Footer.jsx";
 const MainLayout = () => {
   return (
     <div className="bg-primary transition-colors duration-100 ">
-        <header className="sticky top-0 backdrop-blur-xl ">
+        <header className="sticky top-0  z-50 ">
             <Header/>
         </header>
         <main className="min-h-dvh mb-5">
