@@ -3,7 +3,7 @@
 import AboutSection from "./AboutSection.jsx";
 import HeroSection from "./HeroSection.jsx";
 import PopularSection from "./PopularSection.jsx";
-import VisitSection from "./VisitSection.jsx";
+import CafeHighlightsSection from "./CafeHighlightsSection.jsx";
 
 const HomePage = () => {
   return (
@@ -11,7 +11,7 @@ const HomePage = () => {
       <HeroSection />
       <PopularSection />
       <AboutSection />
-      <VisitSection />
+      <CafeHighlightsSection />
     </div>
   )
 }
