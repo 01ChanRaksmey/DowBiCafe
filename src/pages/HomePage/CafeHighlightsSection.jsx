@@ -1,5 +1,6 @@
 
 import { motion } from "motion/react";
+import { GiCurvyKnife } from "react-icons/gi";
 
 const CafeHighlightsSection = () => {
   const features = [
@@ -48,7 +49,7 @@ const CafeHighlightsSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             whileHover={{ y: -4 }}
             viewport={{ once: false, amount: 0.2 }}
-            transition={{ duration: 0.5, delay: index * 0.08 }}
+            transition={{ delay: index * 0.08, duration: 0.5 }}
             className="min-w-0 rounded-2xl border border-logo/15 bg-primary p-5 shadow-lg shadow-logo/10 hover:shadow-xl hover:shadow-logo/20"
           >
             <h3 className="mb-3 wrap-break-word font-display text-xl font-semibold text-main">
@@ -60,6 +61,7 @@ const CafeHighlightsSection = () => {
           </motion.article>
         ))}
       </div>
+
     </section>
   )
 }
