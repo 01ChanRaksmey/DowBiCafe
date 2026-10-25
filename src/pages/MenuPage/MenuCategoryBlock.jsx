@@ -9,8 +9,6 @@ const formatPrice = (price) =>
 const MenuProductCard = ({ product }) => {
   const [quantity, setQuantity] = useState(0);
   const total = quantity * product.price;
-  const orderReminder =
-    quantity >= 10 ? 10 + Math.floor((quantity - 10) / 5) * 5 : null;
 
   return (
     <article className="flex h-full flex-col overflow-hidden rounded-2xl bg-primary shadow-md">
@@ -18,12 +16,12 @@ const MenuProductCard = ({ product }) => {
         <img
           src={product.image}
           alt={product.name}
-          className="aspect-[4/3] w-full object-cover"
+          className="aspect-4/3 w-full object-cover"
         />
       ) : (
-        <div className="flex aspect-[4/3] w-full flex-col items-center justify-center gap-2 bg-footbg px-4 text-center font-sans text-sm text-muted">
+        <div className="flex aspect-4/3 w-full flex-col items-center justify-center gap-2 bg-footbg px-4 text-center font-sans text-sm text-muted">
           <span className="text-2xl" aria-hidden="true">📷</span>
-          <span>Photo needed</span>
+          <span>We're looking for This picture</span>
         </div>
       )}
       <div className="flex flex-1 flex-col p-4">
@@ -73,14 +71,13 @@ const MenuProductCard = ({ product }) => {
             </div>
           )}
         </div>
-        {orderReminder !== null && (
+        {quantity >= 10 && (
           <p
             role="status"
             className="mt-3 rounded-lg border border-amber-300 bg-amber-50 px-3 py-2 font-sans text-xs leading-relaxed text-amber-950"
           >
-            Large order reminder ({orderReminder}+): {quantity}{" "}
-            {product.name} = {formatPrice(total)}. Please double-check the
-            quantity.
+            You have {quantity} {product.name} for {formatPrice(total)}. Please
+            double-check the quantity.
           </p>
         )}
       </div>

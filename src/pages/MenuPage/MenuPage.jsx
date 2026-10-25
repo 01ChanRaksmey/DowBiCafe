@@ -10,6 +10,7 @@ const categories = [
   { id: "breakfast", label: "Breakfast" },
   { id: "sandwiches", label: "Sandwiches" },
   { id: "snacks", label: "Snacks" },
+  { id: "laptops", label: "laptops" },
 ];
 
 const MenuPage = () => {
@@ -23,7 +24,7 @@ const MenuPage = () => {
       frameId = null;
       const stickyNavBottom =
         categoryNavRef.current?.getBoundingClientRect().bottom ?? 0;
-      const activationLine = stickyNavBottom + 48;
+      const activationLine = stickyNavBottom + 180;
       let currentCategory = categories[0].id;
 
       for (const { id } of categories) {
@@ -39,7 +40,6 @@ const MenuPage = () => {
       ) {
         currentCategory = categories[categories.length - 1].id;
       }
-
       setActiveCategory((current) =>
         current === currentCategory ? current : currentCategory,
       );

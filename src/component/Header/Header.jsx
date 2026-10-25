@@ -32,7 +32,7 @@ const Header = () => {
 
   const navMenuStyle = "px-4 py-2 font-happy bg-primary text-main hover:bg-primary-hover rounded-xl hover:text-red-700";
   return (
-    <div className=" sm:px-5 px-1.5 py-5  bg-primary transition-colors duration-100 border-b">
+    <div className=" sm:px-5 px-1.5 py-5  bg-primary transition-colors duration-100 border-b border-border">
       <div className="flex justify-between">
         <div className="flex">
           <NavLink to="/" className="font-Courgette text-3xl font-bold mr-5 text-logo">DowBi<span className="text-[18px] font-light">Cafe</span><span className="text-amber-500">.</span></NavLink>
