@@ -93,7 +93,7 @@ const MenuPage = () => {
         className="sticky top-[77px] z-40 border-y border-border bg-primary shadow-md"
       >
         <div className="overflow-x-auto">
-          <div className="mx-auto flex w-max min-w-full max-w-7xl gap-2 px-4 py-3 sm:gap-3 sm:px-8">
+          <div className="mx-auto flex w-max min-w-full max-w-7xl gap-2 px-4 py-3 sm:gap-3 sm:px-8 md">
             {categories.map((category) => (
               <a
                 key={category.id}

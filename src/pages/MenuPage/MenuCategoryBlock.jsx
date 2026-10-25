@@ -1,15 +1,11 @@
-import { useState } from "react";
-
 const formatPrice = (price) =>
   new Intl.NumberFormat("en-US", {
     style: "currency",
     currency: "USD",
   }).format(price);
 
+// Product preview: photo area, then product details with price and Add action.
 const MenuProductCard = ({ product }) => {
-  const [quantity, setQuantity] = useState(0);
-  const total = quantity * product.price;
-
   return (
     <article className="flex h-full flex-col overflow-hidden rounded-2xl bg-primary shadow-md">
       {product.image ? (
@@ -31,55 +27,9 @@ const MenuProductCard = ({ product }) => {
         <p className="mt-1 flex-1 font-sans text-sm leading-relaxed text-muted">
           {product.description}
         </p>
-        <div className="mt-4 flex items-end justify-between gap-3">
-          <div className="font-sans text-sm">
-            <p className="text-muted">{formatPrice(product.price)} each</p>
-            <p className="mt-1 font-semibold text-main">
-              Total: {formatPrice(total)}
-            </p>
-          </div>
-          {quantity === 0 ? (
-            <button
-              type="button"
-              onClick={() => setQuantity(1)}
-              aria-label={`Add ${product.name}`}
-              className="rounded-full bg-main px-4 py-2 font-sans text-sm font-medium text-primary transition-colors hover:bg-logo"
-            >
-              Add
-            </button>
-          ) : (
-            <div className="flex items-center gap-3 rounded-full border border-border px-2 py-1">
-              <button
-                type="button"
-                onClick={() => setQuantity((current) => current - 1)}
-                aria-label={`Remove one ${product.name}`}
-                className="grid size-8 place-items-center rounded-full text-main hover:bg-primary-hover"
-              >
-                −
-              </button>
-              <span className="min-w-4 text-center font-sans text-sm text-main">
-                {quantity}
-              </span>
-              <button
-                type="button"
-                onClick={() => setQuantity((current) => current + 1)}
-                aria-label={`Add one ${product.name}`}
-                className="grid size-8 place-items-center rounded-full text-main hover:bg-primary-hover"
-              >
-                +
-              </button>
-            </div>
-          )}
-        </div>
-        {quantity >= 10 && (
-          <p
-            role="status"
-            className="mt-3 rounded-lg border border-amber-300 bg-amber-50 px-3 py-2 font-sans text-xs leading-relaxed text-amber-950"
-          >
-            You have {quantity} {product.name} for {formatPrice(total)}. Please
-            double-check the quantity.
-          </p>
-        )}
+        <p className="mt-4 font-sans text-sm font-semibold text-main">
+          {formatPrice(product.price)}
+        </p>
       </div>
     </article>
   );
