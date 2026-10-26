@@ -14,6 +14,25 @@ import chocolateCroissantImage from "../assets/menu/chocolatecroissant.jpg";
 import blueberryMuffinImage from "../assets/menu/blueberrymuffin.jpg";
 import cinnamonRollImage from "../assets/menu/cinnamonroll.jpg";
 import bananaBreadImage from "../assets/menu/bananabread.jpg";
+import chocolateBrownieImage from "../assets/menu/chocolatebrownie.jpg";
+import tiramisuImage from "../assets/menu/tiramisu.jpg";
+import chocolateCakeImage from "../assets/menu/chocolate-cake.jpg";
+import vanillaIceCreamImage from "../assets/menu/vanilla-ice-cream.jpg";
+import pancakeStackImage from "../assets/menu/pancake-stack.jpg";
+import avocadoToastImage from "../assets/menu/avocado-toast.jpg";
+import breakfastOmeletteImage from "../assets/menu/breakfast-omelette.jpg";
+import yogurtGranolaBowlImage from "../assets/menu/yogurt-granola-bowl.jpg";
+import breakfastToastImage from "../assets/menu/breakfast-toast.jpg";
+import chickenSandwichImage from "../assets/menu/chicken-sandwich.jpg";
+import tunaSandwichImage from "../assets/menu/tuna-sandwich.jpg";
+import eggSaladSandwichImage from "../assets/menu/egg-salad-sandwich.jpg";
+import hamCheeseSandwichImage from "../assets/menu/ham-cheese-sandwich.jpg";
+import veggieSandwichImage from "../assets/menu/veggie-sandwich.jpg";
+import frenchFriesImage from "../assets/menu/french-fries.jpg";
+import garlicToastImage from "../assets/menu/garlic-toast.jpg";
+import chickenBitesImage from "../assets/menu/chicken-bites.jpg";
+import onionRingsImage from "../assets/menu/onion-rings.jpg";
+import mixedFruitCupImage from "../assets/menu/mixed-fruit-cup.jpg";
 
 const products = [
   {
@@ -150,7 +169,7 @@ const products = [
     category: "Desserts",
     description: "A rich, fudgy chocolate brownie with a crackly top.",
     price: 3.5,
-    image: null,
+    image: chocolateBrownieImage,
   },
   {
     id: "tiramisu",
@@ -158,7 +177,7 @@ const products = [
     category: "Desserts",
     description: "Coffee-soaked layers with a light mascarpone cream.",
     price: 5,
-    image: null,
+    image: tiramisuImage,
   },
   {
     id: "chocolate-cake",
@@ -166,7 +185,7 @@ const products = [
     category: "Desserts",
     description: "A soft chocolate cake layered with chocolate cream.",
     price: 4.5,
-    image: null,
+    image: chocolateCakeImage,
   },
   {
     id: "vanilla-ice-cream",
@@ -174,7 +193,7 @@ const products = [
     category: "Desserts",
     description: "Cool, creamy vanilla ice cream served by the scoop.",
     price: 3,
-    image: null,
+    image: vanillaIceCreamImage,
   },
   {
     id: "pancake-stack",
@@ -182,7 +201,7 @@ const products = [
     category: "Breakfast",
     description: "Fluffy pancakes served with butter and maple syrup.",
     price: 5,
-    image: null,
+    image: pancakeStackImage,
   },
   {
     id: "avocado-toast",
@@ -190,7 +209,7 @@ const products = [
     category: "Breakfast",
     description: "Toasted sourdough topped with creamy avocado and herbs.",
     price: 5.5,
-    image: null,
+    image: avocadoToastImage,
   },
   {
     id: "breakfast-omelette",
@@ -198,7 +217,7 @@ const products = [
     category: "Breakfast",
     description: "A soft, folded omelette with cheese and fresh herbs.",
     price: 5,
-    image: null,
+    image: breakfastOmeletteImage,
   },
   {
     id: "yogurt-granola-bowl",
@@ -206,7 +225,7 @@ const products = [
     category: "Breakfast",
     description: "Creamy yogurt with crunchy granola and seasonal fruit.",
     price: 4.5,
-    image: null,
+    image: yogurtGranolaBowlImage,
   },
   {
     id: "breakfast-toast",
@@ -214,7 +233,7 @@ const products = [
     category: "Breakfast",
     description: "Toasted bread with egg and melted cheese.",
     price: 4,
-    image: null,
+    image: breakfastToastImage,
   },
   {
     id: "chicken-sandwich",
@@ -222,7 +241,7 @@ const products = [
     category: "Sandwiches",
     description: "Grilled chicken, crisp greens, and house sauce on toasted bread.",
     price: 6,
-    image: null,
+    image: chickenSandwichImage,
   },
   {
     id: "tuna-sandwich",
@@ -230,7 +249,7 @@ const products = [
     category: "Sandwiches",
     description: "Tuna salad with fresh greens served on soft toasted bread.",
     price: 5.5,
-    image: null,
+    image: tunaSandwichImage,
   },
   {
     id: "egg-salad-sandwich",
@@ -238,7 +257,7 @@ const products = [
     category: "Sandwiches",
     description: "Creamy egg salad with lettuce on a freshly toasted bun.",
     price: 5,
-    image: null,
+    image: eggSaladSandwichImage,
   },
   {
     id: "ham-cheese-sandwich",
@@ -246,7 +265,7 @@ const products = [
     category: "Sandwiches",
     description: "Savory ham and melted cheese in crisp toasted bread.",
     price: 5.5,
-    image: null,
+    image: hamCheeseSandwichImage,
   },
   {
     id: "veggie-sandwich",
@@ -254,7 +273,7 @@ const products = [
     category: "Sandwiches",
     description: "Seasonal vegetables, greens, and a herby spread.",
     price: 5,
-    image: null,
+    image: veggieSandwichImage,
   },
   {
     id: "french-fries",
@@ -262,7 +281,7 @@ const products = [
     category: "Snacks",
     description: "Golden, crisp fries served with a house dipping sauce.",
     price: 3.5,
-    image: null,
+    image: frenchFriesImage,
   },
   {
     id: "garlic-toast",
@@ -270,7 +289,7 @@ const products = [
     category: "Snacks",
     description: "Toasted bread brushed with savory garlic butter.",
     price: 3,
-    image: null,
+    image: garlicToastImage,
   },
   {
     id: "chicken-bites",
@@ -278,7 +297,7 @@ const products = [
     category: "Snacks",
     description: "Bite-sized crispy chicken served with a dipping sauce.",
     price: 5,
-    image: null,
+    image: chickenBitesImage,
   },
   {
     id: "onion-rings",
@@ -286,7 +305,7 @@ const products = [
     category: "Snacks",
     description: "Crispy battered onion rings served golden and hot.",
     price: 3.5,
-    image: null,
+    image: onionRingsImage,
   },
   {
     id: "mixed-fruit-cup",
@@ -294,7 +313,7 @@ const products = [
     category: "Snacks",
     description: "A refreshing cup of seasonal cut fruit.",
     price: 3.5,
-    image: null,
+    image: mixedFruitCupImage,
   },
 ];
 

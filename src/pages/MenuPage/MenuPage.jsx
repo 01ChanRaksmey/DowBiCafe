@@ -10,7 +10,6 @@ const categories = [
   { id: "breakfast", label: "Breakfast" },
   { id: "sandwiches", label: "Sandwiches" },
   { id: "snacks", label: "Snacks" },
-  { id: "laptops", label: "laptops" },
 ];
 
 const MenuPage = () => {
