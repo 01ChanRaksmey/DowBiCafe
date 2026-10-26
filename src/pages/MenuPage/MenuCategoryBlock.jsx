@@ -77,7 +77,7 @@ const MenuProductCard = ({ product }) => {
         >
           <article
             onClick={(event) => event.stopPropagation()}
-            className="max-h-[90dvh] w-full max-w-md overflow-y-auto rounded-2xl bg-primary shadow-xl"
+            className="max-h-[80dvh] w-full max-w-md overflow-y-auto rounded-2xl bg-primary shadow-xl"
           >
             {product.image ? (
               <img
