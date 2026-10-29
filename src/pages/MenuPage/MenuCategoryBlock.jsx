@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { useCart } from "../../Context/CartContext.jsx"; // 👈 Import your cart hook
 
 const formatPrice = (price) =>
   new Intl.NumberFormat("en-US", {
@@ -8,15 +9,18 @@ const formatPrice = (price) =>
 
 // Product preview: photo area, then product details and price.
 const MenuProductCard = ({ product }) => {
+  const { addToCart } = useCart(); // 👈 Initialize the cart context
   const [isOrderOpen, setIsOrderOpen] = useState(false);
   const [quantity, setQuantity] = useState(1);
   const [sugar, setSugar] = useState(50);
   const [ice, setIce] = useState("Normal");
+  const [comment, setComment] = useState(""); // 👈 Track textarea comment
 
   const openOrder = () => {
     setQuantity(1);
     setSugar(50);
     setIce("Normal");
+    setComment(""); // Reset comment when opening modal
     setIsOrderOpen(true);
   };
 
@@ -39,6 +43,27 @@ const MenuProductCard = ({ product }) => {
     };
   }, [isOrderOpen]);
 
+  // Handle adding item with customizations to the global cart
+  const handleAddToCart = () => {
+    const isDrink = product.category.toLowerCase() === "drinks";
+
+    // 💡 Create unique ID so different sugar/ice combos stay separate in cart
+    const cartItemId = isDrink 
+      ? `${product.id}-${sugar}sugar-${ice}ice` 
+      : `${product.id}`;
+
+    const cartItemPayload = {
+      ...product,
+      cartItemId,
+      quantity,
+      options: isDrink ? { sugar: `${sugar}%`, ice } : null,
+      comment,
+    };
+
+    addToCart(cartItemPayload);
+    setIsOrderOpen(false); // Close modal after adding
+  };
+
   return (
     <>
       <article
@@ -49,7 +74,7 @@ const MenuProductCard = ({ product }) => {
           <img
             src={product.image}
             alt={product.name}
-            className="aspect-4/3 w-full object-cover"
+            className="aspect-4/3 w-full object-cover "
           />
         ) : (
           <div className="flex aspect-4/3 w-full flex-col items-center justify-center gap-2 bg-footbg px-4 text-center font-sans text-sm text-muted">
@@ -103,7 +128,7 @@ const MenuProductCard = ({ product }) => {
                     <legend className="mb-2 font-sans text-sm font-semibold text-main">
                       Sugar
                     </legend>
-                    <div className="grid grid-cols-3 gap-2">
+                    <div className="grid grid-cols-5 gap-2">
                       {[0, 25, 50, 75, 100].map((level) => (
                         <button
                           key={level}
@@ -172,15 +197,27 @@ const MenuProductCard = ({ product }) => {
                   </button>
                 </div>
               </div>
-              <div className="mt-5 flex items-center justify-between border-t border-border pt-4">
+              <div className="mt-5 flex items-center justify-between border-y border-border py-4">
                 <span className="font-sans font-semibold text-main">Total</span>
                 <span className="font-sans text-lg font-bold text-main">
                   {formatPrice(product.price * quantity)}
                 </span>
               </div>
+              <div className="mt-5 text-muted">
+                <label htmlFor="comment">Anything We should know?</label>
+                <textarea 
+                  name="comment" 
+                  id="comment" 
+                  value={comment}
+                  onChange={(e) => setComment(e.target.value)} // 👈 Save textarea changes
+                  className="p-2 text-[14px] border border-border w-full min-h-20 rounded-lg text-main" 
+                  maxLength={300} 
+                  placeholder="Comment"
+                ></textarea>
+              </div>
               <button
                 type="button"
-                onClick={() => setIsOrderOpen(false)}
+                onClick={handleAddToCart} // 👈 Calls our customized add logic
                 className="mt-5 w-full rounded-xl bg-main px-4 py-3 font-sans font-semibold text-primary transition-colors hover:bg-main/90"
               >
                 Add to Cart
@@ -193,13 +230,12 @@ const MenuProductCard = ({ product }) => {
   );
 };
 
-
-
 const MenuCategoryBlock = ({ category, products }) => {
   const drag = useRef({
     startX: 0,
     scrollLeft: 0,
-    isDragging: false,
+    isDown: false, 
+    isDragging: false, 
     moved: false,
   });
 
@@ -237,32 +273,45 @@ const MenuCategoryBlock = ({ category, products }) => {
                 role="group"
                 aria-label={`${category.label} product row ${rowIndex + 1}`}
                 onMouseDown={(event) => {
-                  if (event.button !== 0) return;
-                  drag.current.startX = event.clientX;
-                  drag.current.scrollLeft = event.currentTarget.scrollLeft;
-                  drag.current.isDragging = true;
-                  drag.current.moved = false;
-                  event.preventDefault();
-                }}
-                onMouseMove={(event) => {
-                  if (!drag.current.isDragging) return;
-                  const distance = event.clientX - drag.current.startX;
-                  if (Math.abs(distance) > 5) drag.current.moved = true;
-                  event.currentTarget.scrollLeft =
-                    drag.current.scrollLeft - distance;
-                }}
-                onMouseUp={() => {
-                  drag.current.isDragging = false;
-                }}
-                onMouseLeave={() => {
-                  drag.current.isDragging = false;
-                }}
-                onClickCapture={(event) => {
-                  if (!drag.current.moved) return;
-                  event.preventDefault();
-                  event.stopPropagation();
-                  drag.current.moved = false;
-                }}
+                      if (event.button !== 0) return;
+                      if (event.target.closest("button, input, textarea, a")) return;
+
+                      drag.current.startX = event.clientX;
+                      drag.current.scrollLeft = event.currentTarget.scrollLeft;
+                      drag.current.isDown = true;
+                      drag.current.isDragging = false; 
+                      drag.current.moved = false;
+                    }}
+                    onMouseMove={(event) => {
+                      if (!drag.current.isDown) return;
+
+                      const distance = event.clientX - drag.current.startX;
+
+                      if (Math.abs(distance) > 5) {
+                        drag.current.isDragging = true;
+                        drag.current.moved = true;
+                      }
+
+                      if (!drag.current.isDragging) return;
+
+                      event.currentTarget.scrollLeft =
+                        drag.current.scrollLeft - distance;
+                      event.preventDefault();
+                    }}
+                    onMouseUp={() => {
+                      drag.current.isDown = false;
+                      drag.current.isDragging = false;
+                    }}
+                    onMouseLeave={() => {
+                      drag.current.isDown = false;
+                      drag.current.isDragging = false;
+                    }}
+                    onClickCapture={(event) => {
+                      if (!drag.current.moved) return;
+                      event.preventDefault();
+                      event.stopPropagation();
+                      drag.current.moved = false;
+                    }}
                 className="select-none overflow-x-auto overscroll-x-contain pb-3 cursor-grab active:cursor-grabbing"
               >
                 <div
