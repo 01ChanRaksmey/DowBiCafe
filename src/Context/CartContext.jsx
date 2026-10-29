@@ -33,15 +33,13 @@ export function CartProvider({ children }) {
   // 🆕 NEW: Function to change quantity directly (e.g., +1 or -1)
   const updateQuantity = (cartItemId, amount) => {
     setCartItems((prevItems) => {
-      return prevItems
-        .map((item) => {
+      return prevItems.map((item) => {
           if (item.cartItemId === cartItemId) {
             const newQuantity = item.quantity + amount;
             return { ...item, quantity: newQuantity };
           }
           return item;
-        })
-        .filter((item) => item.quantity > 0); // Automatically remove if quantity drops below 1
+        }).filter((item) => item.quantity > 0); // Automatically remove if quantity drops below 1
     });
   };
 
@@ -58,9 +56,6 @@ export function CartProvider({ children }) {
   );
 }
 
-export function useCall() { // (or keep useCart)
-  return useContext(CartContext);
-}
 
 export function useCart() {
   return useContext(CartContext);

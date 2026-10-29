@@ -18,14 +18,13 @@ export default function CartDrawer({ isOpen, onClose }) {
 
   return (
     <div className="fixed inset-0 z-50 overflow-hidden">
-      {/* Backdrop */}
+      {/* Backdrop overlay */}
       <div 
         onClick={onClose}
         className="absolute inset-0 bg-black/50 transition-opacity" 
       />
-
-      <div className="absolute inset-y-0 right-0 max-w-full flex pl-10">
-        <div className="w-screen max-w-md bg-primary shadow-xl flex flex-col">
+      <div className="absolute inset-y-0 right-0 w-full sm:w-1/2 flex max-w-full">
+        <div className="w-full h-dvh bg-primary shadow-xl flex flex-col">
           
           {/* Header */}
           <div className="flex items-center justify-between px-6 py-4 border-b border-border">
@@ -39,7 +38,7 @@ export default function CartDrawer({ isOpen, onClose }) {
             </button>
           </div>
 
-          {/* Items List */}
+          {/* Cart Items List */}
           <div className="flex-1 overflow-y-auto px-6 py-4 space-y-4">
             {cartItems.length === 0 ? (
               <div className="text-center py-20 text-muted">
@@ -81,7 +80,7 @@ export default function CartDrawer({ isOpen, onClose }) {
                         {formatPrice(item.price * item.quantity)}
                       </span>
 
-                      {/* 🆕 Quantity Changer Controls (+ and -) */}
+                      {/* Quantity Changer Controls (+ and -) */}
                       <div className="flex items-center gap-2 border border-border rounded-lg px-2 py-1 bg-primary">
                         <button
                           onClick={() => updateQuantity(item.cartItemId, -1)}
@@ -118,7 +117,7 @@ export default function CartDrawer({ isOpen, onClose }) {
             )}
           </div>
 
-          {/* Footer Subtotal */}
+          {/* Checkout Footer */}
           {cartItems.length > 0 && (
             <div className="border-t border-border px-6 py-4 space-y-4 bg-primary">
               <div className="flex justify-between items-center">
