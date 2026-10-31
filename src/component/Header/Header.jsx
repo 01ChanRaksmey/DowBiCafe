@@ -64,9 +64,6 @@ const Header = () => {
               <NavLink to="/event" className={navStyle}>
                 Events
               </NavLink>
-              <NavLink to="/ourstory" className={navStyle}>
-                Our Story
-              </NavLink>
               <NavLink to="/visit" className={navStyle}>
                 Visit
               </NavLink>
@@ -89,7 +86,7 @@ const Header = () => {
               <IoCartOutline className="text-[18px]" />
               Cart
               {totalItemsCount > 0 && (
-                <span className="absolute -top-1.5 -right-1.5 bg-red-600 text-white text-[10px] w-5 h-5 rounded-full flex items-center justify-center font-bold font-sans">
+                <span className="absolute -top-1.5 -right-1.5 bg-amber-500 text-white text-[10px] w-4 h-4 rounded-full flex items-center justify-center font-bold font-sans">
                   {totalItemsCount}
                 </span>
               )}
@@ -147,13 +144,6 @@ const Header = () => {
                 className={navMenuStyle}
               >
                 Events
-              </NavLink>
-              <NavLink
-                to="/ourstory"
-                onClick={() => setIsMenu(false)}
-                className={navMenuStyle}
-              >
-                Our Story
               </NavLink>
               <NavLink
                 to="/visit"

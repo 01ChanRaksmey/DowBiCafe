@@ -28,7 +28,6 @@ const Footer = () => {
             <NavLink to="/menu" className={footNavStyle}>Menu</NavLink>
             <NavLink to="/reservation" className={footNavStyle} >Reservations</NavLink>
             <NavLink to="/event" className={footNavStyle} >Events</NavLink>
-            <NavLink to="/ourstory" className={footNavStyle}>Our Story</NavLink>
             <NavLink to="/visit" className={footNavStyle} >Visit</NavLink>
           </nav>
         </div>

@@ -39,7 +39,7 @@ export function CartProvider({ children }) {
             return { ...item, quantity: newQuantity };
           }
           return item;
-        }).filter((item) => item.quantity > 0); // Automatically remove if quantity drops below 1
+        }).filter((item) => item.quantity > 0);
     });
   };
 

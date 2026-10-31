@@ -43,7 +43,7 @@ const AboutSection = () => {
           </span>
         </p>
         <Link
-          to="/ourstory"
+          to="/visit"
           className="inline-block rounded-full border border-main px-6 py-3 font-sans font-semibold text-main transition-colors hover:bg-primary-hover"
         >
           Our Story
@@ -52,7 +52,7 @@ const AboutSection = () => {
       <img
         src={shopImage}
         alt="The welcoming DowBi Cafe storefront"
-        className="h-72 w-full rounded-3xl object-cover shadow-lg md:h-[28rem] lg:h-[32rem]"
+        className="h-72 w-full rounded-3xl object-cover shadow-lg md:h-112 lg:h-128"
       />
     </section>
   )

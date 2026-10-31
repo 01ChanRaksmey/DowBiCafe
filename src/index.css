@@ -11,6 +11,7 @@
   --color-underline: #3B2A20;
   --color-muted: #75675C;
   --color-footbg: #F1E5D6;
+  --color-event-bg: var(--color-amber-400);
   --font-sans: "Space Grotesk", system-ui, sans-serif;
   --font-logo: "Sofadi One";
   --font-display: "Playfair Display";
@@ -30,5 +31,6 @@
   --color-underline: #D6A85F;
   --color-muted:#B8B0A5;
   --color-footbg: #1F2928;
+  --color-event-bg: var(--color-amber-700);
 
 }
