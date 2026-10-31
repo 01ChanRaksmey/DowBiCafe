@@ -72,7 +72,7 @@ const Header = () => {
           <div className="flex items-center gap-2">
             <NavLink
               to="/menu"
-              className="hidden sm:flex items-center gap-2 text-[12px] px-2.5 py-2 font-Courgette text-main bg-green-500 rounded-xl hover:scale-98"
+              className="hidden sm:flex items-center gap-2 text-[12px] px-2.5 py-2 font-Courgette text-main bg-amber-500 rounded-xl hover:scale-98"
             >
               <BiBasket className="text-[18px]" />
               Order Now
@@ -81,20 +81,17 @@ const Header = () => {
             {/* 3. Updated Cart Button to trigger drawer + badge counter */}
             <button
               onClick={() => setIsCartOpen(true)}
-              className="relative text-[12px] px-2.5 py-2 font-Courgette text-main bg-green-500 rounded-xl flex items-center gap-2 hover:scale-95 transition-transform"
+              className="relative text-[12px] px-2.5 py-2 font-Courgette text-main bg-amber-500 rounded-xl flex items-center gap-2 hover:scale-95 transition-transform"
             >
               <IoCartOutline className="text-[18px]" />
               Cart
               {totalItemsCount > 0 && (
-                <span className="absolute -top-1.5 -right-1.5 bg-amber-500 text-white text-[10px] w-4 h-4 rounded-full flex items-center justify-center font-bold font-sans">
+                <span className="absolute -top-1.5 -right-1.5 bg-amber-600 text-white text-[10px] w-4 h-4 rounded-full flex items-center justify-center font-bold font-sans">
                   {totalItemsCount}
                 </span>
               )}
             </button>
 
-            <NavLink className="hidden sm:inline-block text-[12px] px-2.5 py-2 font-Courgette text-main border-gray-400 border rounded-xl hover:scale-95">
-              Sign In
-            </NavLink>
             <button
               onClick={() => setTheme(theme === "light" ? "dark" : "light")}
               className="text-xl px-2.5 py-2 font-bold border border-gray-400 rounded-xl"

@@ -4,7 +4,7 @@ import React from 'react'
 
 const VisitInfo = () => {
   return (
-      <section className="min-h-[60dvh] flex items-center px-6 py-12">
+      <section className="min-h-[80dvh] flex items-center px-6 py-12">
         <div className="mx-auto w-full max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
 
           {/* Introduction */}
