@@ -46,7 +46,7 @@ const AboutSection = () => {
           to="/visit"
           className="inline-block rounded-full border border-main px-6 py-3 font-sans font-semibold text-main transition-colors hover:bg-primary-hover"
         >
-          Our Story
+          Find Us
         </Link>
       </div>
       <img

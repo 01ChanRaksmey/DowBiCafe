@@ -4,10 +4,8 @@ import { BiBasket } from "react-icons/bi";
 import { IoExitOutline } from "react-icons/io5";
 import { CiLight, CiDark } from "react-icons/ci";
 import { IoCartOutline, IoMenuOutline } from "react-icons/io5";
-
-// 1. Import CartContext and CartDrawer
-import { useCart } from "../../Context/CartContext.jsx";
-import CartDrawer from "../Cart/CartDrawer.jsx"; // Adjust path if needed
+import { useCart } from "../../Context/useCart.js";
+import CartDrawer from "../Cart/CartDrawer.jsx"; 
 
 const Header = () => {
   // dark mode
@@ -22,7 +20,6 @@ const Header = () => {
   // sidebar
   const [isMenu, setIsMenu] = useState(false);
 
-  // 2. Cart state & context data
   const [isCartOpen, setIsCartOpen] = useState(false);
   const { cartItems } = useCart();
 

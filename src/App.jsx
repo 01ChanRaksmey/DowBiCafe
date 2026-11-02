@@ -9,9 +9,8 @@ import ErrorPage from "./pages/ErrorPage/ErrorPage.jsx"
 import { CartProvider } from "../src/Context/CartContext.jsx"; // Make sure this path matches your folder structure!
 
 
-
-
 function App() {
+
   return (
     // 1. Wrap everything inside the CartProvider
     <CartProvider>

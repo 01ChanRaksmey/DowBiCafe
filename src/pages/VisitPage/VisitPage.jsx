@@ -1,5 +1,4 @@
 
-import React from "react";
 import VisitInfo from "./VisitInfo";
 import Contact from "./Contact";
 import MapSection from "./MapSection";

@@ -1,5 +1,4 @@
 
-
 import AboutSection from "./AboutSection.jsx";
 import HeroSection from "./HeroSection.jsx";
 import PopularSection from "./PopularSection.jsx";

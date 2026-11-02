@@ -89,7 +89,7 @@ const MenuPage = () => {
       <nav
         ref={categoryNavRef}
         aria-label="Menu categories"
-        className="sticky top-[77px] z-40 border-y border-border bg-primary shadow-md"
+        className="sticky top-19.25 z-40 border-y border-border bg-primary shadow-md"
       >
         <div className="overflow-x-auto">
           <div className="mx-auto flex w-max min-w-full max-w-7xl gap-2 px-4 py-3 sm:gap-3 sm:px-8 md">

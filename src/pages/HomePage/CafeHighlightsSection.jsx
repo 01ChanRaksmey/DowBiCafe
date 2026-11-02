@@ -1,6 +1,6 @@
 
 import { motion } from "motion/react";
-import { GiCurvyKnife } from "react-icons/gi";
+
 
 const CafeHighlightsSection = () => {
   const features = [

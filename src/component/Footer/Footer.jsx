@@ -2,7 +2,6 @@ import { NavLink } from 'react-router-dom'
 import { IoLocationOutline,IoCallOutline } from "react-icons/io5";
 import { FaFacebook, FaTiktok, FaTelegram } from "react-icons/fa6";
 import { IoMdTime } from "react-icons/io";
-import React from 'react'
 
 const Footer = () => {
 
@@ -35,15 +34,15 @@ const Footer = () => {
           <h1 className=" font-Akaya-Kanadaka text-logo text-2xl">Contact Us</h1>
           <nav>
             <a href="tel:+85512345678" className={aLinkStyle}><IoCallOutline />+855 12 345 678</a>
-            <a href="https://facebook.com/your-page"target="_blank" rel="noopener noreferrer" className={aLinkStyle}>
+            <a href="https://facebook.invalid/dowbicafe" target="_blank" rel="noopener noreferrer" className={aLinkStyle}>
               <FaFacebook />Facebook
             </a>
 
-            <a href="https://www.tiktok.com/@your-account" target="_blank" rel="noopener noreferrer" className={aLinkStyle}>
+            <a href="https://tiktok.invalid/@dowbicafe" target="_blank" rel="noopener noreferrer" className={aLinkStyle}>
               <FaTiktok />TikTok
             </a>
 
-            <a href="https://t.me/your-account" target="_blank"rel="noopener noreferrer"className={aLinkStyle}>
+            <a href="https://telegram.invalid/dowbicafe" target="_blank" rel="noopener noreferrer" className={aLinkStyle}>
               <FaTelegram />Telegram
             </a>
             <a href="mailto:hello@dowb icafe.example" className={aLinkStyle}>

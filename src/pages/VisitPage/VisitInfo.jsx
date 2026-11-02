@@ -1,6 +1,5 @@
 
 import { motion } from 'motion/react'
-import React from 'react'
 
 const VisitInfo = () => {
   return (

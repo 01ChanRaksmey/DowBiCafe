@@ -26,13 +26,13 @@ const contactItems = [
     icon: FaFacebookF,
     label: "Facebook",
     value: "Follow us for café updates",
-    href: "https://facebook.com/your-page",
+    href: "https://facebook.invalid/dowbicafe",
   },
   {
     icon: FaTiktok,
     label: "TikTok",
     value: "See what’s brewing",
-    href: "https://www.tiktok.com/@your-account",
+    href: "https://tiktok.invalid/@dowbicafe",
   },
 ];
 
@@ -46,7 +46,7 @@ const Contact = () => {
 
     const observer = new IntersectionObserver(
       ([entry]) => setIsHeadingVisible(entry.isIntersecting),
-      { threshold: 0.2 }
+      { threshold: 0.2}
     );
 
     observer.observe(heading);
@@ -94,14 +94,6 @@ const Contact = () => {
             <span>Mon–Fri, 7:00 AM–6:00 PM · Sat–Sun, 7:00 AM–3:00 PM</span>
           </p>
         </div>
-        <a
-          href="https://www.google.com/maps/search/?api=1&query=St.%20271D%2C%20DowDing%20Boulevard%2C%20Old%20Market%20Quarter%2C%20Daun%20Penh%2C%20Phnom%20Penh%2C%20Cambodia"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-block rounded-full border border-main px-6 py-3 font-sans font-semibold text-main transition-colors hover:bg-primary-hover"
-        >
-          Get directions
-        </a>
       </div>
       <img
         src={shopImage}

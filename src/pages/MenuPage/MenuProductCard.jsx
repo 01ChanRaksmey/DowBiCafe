@@ -1,5 +1,5 @@
-import { useEffect, useRef, useState } from "react";
-import { useCart } from "../../Context/CartContext.jsx"; 
+import { useEffect, useState } from "react";
+import { useCart } from "../../Context/useCart.js";
 
 const formatPrice = (price) =>
   new Intl.NumberFormat("en-US", {
@@ -133,7 +133,7 @@ const MenuProductCard = ({ product }) => {
                           type="button"
                           aria-pressed={sugar === level}
                           onClick={() => setSugar(level)}
-                          className={`rounded-lg border px-3 py-2 font-sans text-sm ${
+                          className={`rounded-lg border px-1 py-2 font-sans text-xs sm:px-3 sm:text-sm ${
                             sugar === level
                               ? "border-main bg-main text-primary"
                               : "border-border text-main hover:bg-primary-hover"
