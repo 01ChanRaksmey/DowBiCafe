@@ -1,20 +1,23 @@
 import { useEffect, useRef, useState } from "react";
 import menuHero from "../../assets/menuhero.jpg";
 import products from "../../data/product.js";
+import categories from "../../data/menuCategories.js";
 import MenuCategoryBlock from "./MenuCategoryBlock.jsx";
-
-const categories = [
-  { id: "drinks", label: "Drinks" },
-  { id: "bakery", label: "Bakery" },
-  { id: "desserts", label: "Desserts" },
-  { id: "breakfast", label: "Breakfast" },
-  { id: "sandwiches", label: "Sandwiches" },
-  { id: "snacks", label: "Snacks" },
-];
 
 const MenuPage = () => {
   const [activeCategory, setActiveCategory] = useState(categories[0].id);
   const categoryNavRef = useRef(null);
+
+  useEffect(() => {
+    const categoryId = window.location.hash.slice(1);
+    if (!categoryId) return undefined;
+
+    const frameId = window.requestAnimationFrame(() => {
+      document.getElementById(categoryId)?.scrollIntoView();
+    });
+
+    return () => window.cancelAnimationFrame(frameId);
+  }, []);
 
   useEffect(() => {
     let frameId = null;

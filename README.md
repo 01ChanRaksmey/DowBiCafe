@@ -1,16 +1,51 @@
-# React + Vite
+# DowBi Cafe
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+DowBi Cafe is a responsive café website built as a front-end portfolio project. It brings the café menu, events, visit information, and demo ordering and reservation flows together in one place.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Browse menu items by category and add products to the cart.
+- Explore café events and promotions.
+- Submit demo booking requests and view or cancel them in the browser.
+- Try a demo checkout flow with a delivery-location map.
+- Switch between light and dark themes.
+- Browse responsive layouts for desktop and mobile.
 
-## React Compiler
+## Tech stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React
+- Vite
+- React Router
+- Tailwind CSS
+-Moin Library and OpenStreet Map
+- Leaflet and React Leaflet
 
-## Expanding the ESLint configuration
+## Run locally
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Install dependencies:
+
+```bash
+npm install
+```
+
+Start the development server:
+
+```bash
+npm run dev
+```
+
+Run lint checks:
+
+```bash
+npm run lint
+```
+
+Create a production build:
+
+```bash
+npm run build
+```
+
+## Demo limitations
+
+This is a front-end portfolio demo. Booking requests and cart data are stored in the browser; they are not sent to a café or payment service. No real reservations, orders, or payments are processed.

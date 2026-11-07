@@ -25,7 +25,7 @@ const Footer = () => {
           <h1 className=" font-Akaya-Kanadaka text-logo text-2xl">Explore</h1>
           <nav className="flex flex-col"> 
             <NavLink to="/menu" className={footNavStyle}>Menu</NavLink>
-            <NavLink to="/reservation" className={footNavStyle} >Reservations</NavLink>
+            <NavLink to="/reservation" className={footNavStyle}>Reservations</NavLink>
             <NavLink to="/event" className={footNavStyle} >Events</NavLink>
             <NavLink to="/visit" className={footNavStyle} >Visit</NavLink>
           </nav>
@@ -33,7 +33,7 @@ const Footer = () => {
         <div>
           <h1 className=" font-Akaya-Kanadaka text-logo text-2xl">Contact Us</h1>
           <nav>
-            <a href="tel:+85512345678" className={aLinkStyle}><IoCallOutline />+855 12 345 678</a>
+            <a href="tel:+85512345678" className={aLinkStyle}><IoCallOutline />+855 12 345 678T</a>
             <a href="https://facebook.invalid/dowbicafe" target="_blank" rel="noopener noreferrer" className={aLinkStyle}>
               <FaFacebook />Facebook
             </a>

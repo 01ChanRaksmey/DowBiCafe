@@ -1,25 +1,18 @@
 
 import { Link } from "react-router-dom";
-import newYorkCheesecake from "../../assets/menu/newyorkcheesecake.jpg";
-import americano from "../../assets/menu/americano.jpg";
-import butterCroissant from "../../assets/menu/buttercroissant.jpg";
+import products from "../../data/product.js";
+import menuCategories from "../../data/menuCategories.js";
 
 const PopularSection = () => {
-  const popularItems = [
-    { name: "Americano", category: "Coffee", image: americano },
-    { name: "Butter Croissant", category: "Freshly baked", image: butterCroissant },
-    { name: "New York Cheesecake", category: "Something sweet", image: newYorkCheesecake },
-  ];
-
   return (
     <section className="mx-auto max-w-7xl px-4 py-16 md:px-8 md:py-20">
       <div className="mb-8 flex items-end justify-between gap-4">
         <div>
           <p className="mb-2 font-sans text-sm tracking-[0.2em] text-muted">
-            A FEW FAVORITES
+            FIND YOUR FAVORITE
           </p>
           <h2 className="font-display text-3xl font-bold text-main md:text-4xl">
-            Popular picks
+            Explore the menu
           </h2>
         </div>
         <Link
@@ -31,24 +24,37 @@ const PopularSection = () => {
       </div>
 
       <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {popularItems.map((item) => (
-          <article
-            key={item.name}
-            className="overflow-hidden rounded-2xl bg-primary shadow-md transition-transform duration-200 hover:-translate-y-1"
-          >
-            <img
-              src={item.image}
-              alt={item.name}
-              className="aspect-4/3 w-full object-cover"
-            />
-            <div className="p-5">
-              <p className="mb-1 font-sans text-sm text-muted">{item.category}</p>
-              <h3 className="font-display text-xl font-semibold text-main">
-                {item.name}
-              </h3>
-            </div>
-          </article>
-        ))}
+        {menuCategories.map((category) => {
+          const representativeProduct = products.find(
+            (product) =>
+              product.category.toLowerCase() === category.label.toLowerCase(),
+          );
+
+          return (
+            <Link
+              key={category.id}
+              to={`/menu#${category.id}`}
+              aria-label={`Explore ${category.label}: ${category.description}`}
+              className="group overflow-hidden rounded-2xl border border-border bg-primary shadow-md transition-transform duration-200 hover:-translate-y-1 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-main"
+            >
+              <div className="relative overflow-hidden">
+                <img
+                  src={representativeProduct.image}
+                  alt=""
+                  loading="lazy"
+                  className="aspect-4/3 w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-linear-to-t from-black/75 via-black/10 to-transparent" />
+                <h3 className="absolute bottom-4 left-4 font-display text-xl font-semibold text-white sm:bottom-5 sm:left-5 sm:text-2xl">
+                  {category.label}
+                </h3>
+              </div>
+              <p className="p-4 font-sans text-sm text-muted sm:p-5">
+                {category.description}
+              </p>
+            </Link>
+          );
+        })}
       </div>
     </section>
   );

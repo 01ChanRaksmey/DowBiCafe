@@ -59,6 +59,11 @@ const EventCard = () => {
               <p className="text-sm font-semibold text-main">
                 {event.promoDescription}
               </p>
+              {event.promotion.includes("OFF") && (
+                <p className="mt-1 text-xs text-muted">
+                  Discount valid for in-store purchases only.
+                </p>
+              )}
             </div>
           </div>
         </article>

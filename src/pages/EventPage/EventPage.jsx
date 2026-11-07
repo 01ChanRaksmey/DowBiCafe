@@ -27,9 +27,6 @@ const EventPage = () => {
       <section className="mb-10">
         <EventCard />
       </section>
-      <section>
-
-      </section>
     </div>
   )
 }
