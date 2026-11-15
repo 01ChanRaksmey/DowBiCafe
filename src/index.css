@@ -53,3 +53,11 @@ html {
   --color-event-bg: var(--color-amber-700);
 
 }
+
+#booking-date::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+}
+
+[data-theme="dark"] #booking-date::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+}

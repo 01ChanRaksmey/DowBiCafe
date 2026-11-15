@@ -20,32 +20,6 @@ DowBi Cafe is a responsive café website built as a front-end portfolio project.
 -Moin Library and OpenStreet Map
 - Leaflet and React Leaflet
 
-## Run locally
-
-Install dependencies:
-
-```bash
-npm install
-```
-
-Start the development server:
-
-```bash
-npm run dev
-```
-
-Run lint checks:
-
-```bash
-npm run lint
-```
-
-Create a production build:
-
-```bash
-npm run build
-```
-
 ## Demo limitations
 
 This is a front-end portfolio demo. Booking requests and cart data are stored in the browser; they are not sent to a café or payment service. No real reservations, orders, or payments are processed.
